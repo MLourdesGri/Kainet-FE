@@ -1,0 +1,23 @@
+<h2>Crear Nueva Posición</h2>
+<form (ngSubmit)="createPosition()">
+  <label>Empresa:</label>
+<select [(ngModel)]="form.idEmpresa" name="idEmpresa" required>
+  <option *ngFor="let e of empresas" [value]="e.id">{{ e.razonSocial }}</option>
+</select>
+<br>
+  <label>Producto:</label>
+    <select [(ngModel)]="form.idProducto" name="idProducto" required>
+        <option *ngFor="let p of productos" [value]="p.id">{{ p.nombre }}</option>
+    </select>
+<br>
+  <label>Fecha de disponibilidad:</label>
+  <input type="date" [(ngModel)]="form.fechaEntregaInicio" name="fecha" required>
+<br>
+  <label>Precio:</label>
+  <input type="number" [(ngModel)]="form.precio" name="precio" required>
+<br>
+  <label>Moneda:</label>
+  <input [(ngModel)]="form.moneda" name="moneda" required>
+<br>
+  <button type="submit">Crear</button>
+</form>

@@ -1,0 +1,8 @@
+<!-- app.component.html -->
+<div class="container">
+  <button class="toggle-btn" (click)="toggleSidebar()">☰</button>
+  <app-sidebar [isOpen]="sidebarOpen" (closeSidebar)="closeSidebar()"></app-sidebar>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

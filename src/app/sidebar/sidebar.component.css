@@ -1,0 +1,22 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 150px;
+  background: beige;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  z-index: 99;
+}
+.sidebar.closed {
+  transform: translateX(-100%);
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar li {
+  cursor: pointer;
+  padding: 10px 0;
+}

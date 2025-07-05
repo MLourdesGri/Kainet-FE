@@ -1,0 +1,28 @@
+<h2>Listado de posiciones</h2>
+
+<div *ngIf="loading">Cargando posiciones...</div>
+
+<table *ngIf="!loading && positions.length" border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>Empresa</th>
+      <th>Producto</th>
+      <th>Fecha disponibilidad</th>
+      <th>Precio</th>
+      <th>Moneda</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pos of positions">
+      <td>{{ pos.empresa.razonSocial }}</td>
+      <td>{{ pos.producto.nombre }}</td>
+      <td>{{ pos.fechaEntregaInicio | date }}</td>
+      <td>{{ pos.precio | number:'1.2-2' }}</td>
+      <td>{{ pos.moneda }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="!loading && positions.length === 0">
+  No hay posiciones disponibles.
+</div>

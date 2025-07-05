@@ -1,0 +1,9 @@
+<!-- sidebar.component.html -->
+<nav class="sidebar" [class.closed]="!isOpen">
+  <ul>
+    <li (click)="navigate('')">Home</li>
+    <li (click)="navigate('create')">Nueva posicion</li>
+    <li (click)="navigate('about')">About</li>
+    <li (click)="navigate('contact')">Contact</li>
+  </ul>
+</nav>
