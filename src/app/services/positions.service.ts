@@ -9,6 +9,19 @@ export interface Position {
   precio: number;
   moneda: string;
 }
+
+export interface PositionWithDetails {
+  empresa: {
+    razonSocial: string;
+  };
+  producto: {
+    nombre: string;
+  };
+  fechaEntregaInicio: string;
+  precio: number;
+  moneda: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,8 +31,8 @@ export class PositionsService {
 
   constructor(private http: HttpClient) {}
 
-  getPositions(): Observable<Position[]> {
-    return this.http.get<Position[]>(this.apiUrl);
+  getPositions(): Observable<PositionWithDetails[]> {
+    return this.http.get<PositionWithDetails[]>(this.apiUrl);
   }
 
   createPosition(position: Partial<Position>): Observable<any> {

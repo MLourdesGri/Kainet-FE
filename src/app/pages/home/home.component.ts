@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Position, PositionsService } from '../../services/positions.service';
+import { PositionWithDetails, PositionsService } from '../../services/positions.service';
 import { CommonModule, NgIf } from '@angular/common';
 import { provideHttpClient } from '@angular/common/http';
 
@@ -11,7 +11,7 @@ import { provideHttpClient } from '@angular/common/http';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
-  positions: Position[] = [];
+  positions: PositionWithDetails[] = [];
   loading = true;
 
   constructor(private positionsService: PositionsService) {}
